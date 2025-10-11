@@ -10,7 +10,7 @@ const password = process.argv[2]
 // otherwise we are adding a person to the phonebook
 
 const url =
-  `mongodb+srv://mhsrib:${password}@cluster0.i2nlv.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`
+  `mongodb+srv://mhpsrib_db_user:${password}@cluster0.ijm6i58.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`
 
 mongoose.set('strictQuery',false)
 
