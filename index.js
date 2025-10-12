@@ -100,6 +100,23 @@ app.get('/api/persons/:id', (request, response, next) => {
 
 })
 
+// updating the number of a person
+app.put('/api/persons/:id', (request, response, next) => {
+
+  Person.findByIdAndUpdate(
+    request.params.id, 
+    request.body,
+    { new: true } 
+  ).then(updatedPerson => {
+      if (updatedPerson) {
+        response.json(updatedPerson)
+      } else {
+        response.status(404).json({ error: 'person not found' })
+      }
+    })
+    .catch(error => next(error))
+})
+
 // deleting a person
 app.delete('/api/persons/:id', (request, response, next) => {
   Person.findByIdAndDelete(request.params.id)
