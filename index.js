@@ -52,9 +52,15 @@ app.get('/api/persons', (request, response) => {
 })
 
 app.get('/info', (request, response) => {
-    const date = new Date()
-    response.send('<p>Phonebook has info for ' + persons.length + ' <br/>' + date+'<p>')
-  })
+  Person.find({})
+    .then(persons => {
+      const date = new Date()
+      response.send(
+        `<p>Phonebook has info for ${persons.length} people</p>
+         <p>${date}</p>`
+      )
+    })
+})
 
 // method used to generate a person entry ID
 const generateId = () => {
