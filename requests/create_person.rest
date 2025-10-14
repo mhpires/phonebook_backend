@@ -2,6 +2,6 @@ POST https://fullstackopenhelsinki-part3.onrender.com/api/persons
 Content-Type: application/json
 
 {
-  "name": "Mafalda",
+  "name": "Mu",
   "number": "3248630934"
 }
