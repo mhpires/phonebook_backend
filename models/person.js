@@ -8,7 +8,7 @@ const url = process.env.MONGODB_URI
 console.log('connecting to', url)
 mongoose.connect(url)
 
-  .then(result => {
+  .then(() => {
     console.log('connected to MongoDB')
   })
   .catch(error => {
@@ -18,8 +18,8 @@ mongoose.connect(url)
 const personSchema = new mongoose.Schema({
   name:{
     type: String,
-    minLength:[3, "Name has to have at least 3 letters"],
-    required: [true, "A Name is required" ]
+    minLength:[3, 'Name has to have at least 3 letters'],
+    required: [true, 'A Name is required' ]
   },
   number: {
     type: String,
@@ -29,7 +29,7 @@ const personSchema = new mongoose.Schema({
       },
       message: props => `${props.value} is not a valid phone number!, it should be of the form XX-XXXXXX or XXX-XXXXX`
     },
-    required: [true, "A Number is required" ]
+    required: [true, 'A Number is required' ]
   },
 })
 
